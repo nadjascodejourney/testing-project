@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
-export const AlertButton = ({}) => {
+export const AlertButton = (
+  {handleSubmit = () => {}}) => {
   const [message, setMessage] = useState('Alert!');
 
   return (
