@@ -16,9 +16,7 @@ export const add = (a, b) => {
 
 export const subtract = (a, b) => {
 
-
-
-    if(Array.isArray(a)) {
+    if(Array.isArray(a, b)) {
         a = a.reduce((a, b) => a - b); // we are using the reduce method to subtract all the numbers in the array from the first number [4, 1] => 4 - 1 = 3
     }
 
@@ -30,6 +28,11 @@ export const multiply = (a, b) => {
 };
 
 export const divide = (a, b) => {
+
+    if(b === 0) {
+        return Infinity;
+    }
+
     return a / b;
 };
 

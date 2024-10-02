@@ -22,8 +22,9 @@ describe('add', () => {
         expect(() => add('banana', 2)).toThrow("Invalid input"); // we call the add function with a string and a number, and we expect it to throw an error > different syntax than the previous test, because we are testing if the function throws an error
     });
 
-    
-
+    it("shoild throw if the first argument is not a number" , () => {
+        expect(() => add(NaN, 2)).toThrow("Invalid input");
+    });
 
 }); // describe means we are describing a test suite
 
@@ -35,6 +36,11 @@ describe('subtract', () => {
     it("should accept and subtract numbers in an array", () => {
         expect(subtract([4, 1], 2)).toBe(1); // we are passing an array of numbers and a number to subtract; [4, 1] => 4 - 1 = 3 => 3 - 2 = 1
     }   );
+
+    /* it("should default undefined to 0", () => {
+        expect(subtract(2)).toBe(2);
+        expect(subtract(undefined, 2)).toBe(-2);
+    }); */
 });
 
 describe('multiply', () => {
@@ -47,6 +53,10 @@ describe('divide', () => {
     it('should divide two positive numbers', () => {
         expect(divide(4,2)).toBe(2);
     })
+
+    it("should return Infinity if you divide by 0", () => {
+        expect(divide(4, 0)).toBe(Infinity);
+    });
 
 });
 
